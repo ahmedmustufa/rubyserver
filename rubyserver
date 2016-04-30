@@ -1,0 +1,66 @@
+* Ruby *
+
+
+* Install Homebrew *
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+ # Ruby Installation
+
+ brew install rbenv ruby-build
+
+# Add rbenv to bash so that it loads every time you open a terminal
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+
+# Install Ruby
+rbenv install 2.3.0
+rbenv global 2.3.0
+ruby -v
+
+
+* Git Configuration * (Use GitHub credentials)
+
+git config --global color.ui true
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR@EMAIL.com"
+ssh-keygen -t rsa -C "YOUR@EMAIL.com"
+
+Generate SSH Key via the following command:
+
+cat ~/.ssh/id_rsa.pub
+
+
+Copy SSH Key and Paste at https://github.com/settings/ssh
+
+Install rails:
+
+gem install rails -v 4.2.6
+
+Install MySQL:
+
+brew install mysql
+
+Start an app using MySQL:
+
+rails new myapp -d mysql
+
+* CD into app directory:
+
+cd myapp
+
+* Create database:
+
+rakedb:create
+
+* Run Rails Server:
+
+rails server
+
+
+
+further documentation at https://gorails.com/setup/osx/10.11-el-capitan
+
+
+Hope it helps!
